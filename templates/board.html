@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+
+{% block title %}Boggle Board{% endblock %}
+
+{% block content %}
+
+<h1 id='boggle'>Boggle</h1>
+<div id="dashboard">
+<span id="db-score">Score: <span id="score">0</span> </span>
+<span id="db-time">Time: <span id="time"></span> </span>
+</div>
+<table>
+    <tbody>
+    {% for row in board %}
+    <tr>
+        {% for letter in row %}
+        <td>{{letter}}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<form>
+    <label for="guess">Guess a word: </label>
+    <input id="guess" name="guess" type="text">
+    <button>Submit</button>
+</form>
+
+<div id="response"></div>
+
+<ul id="words"></ul>
+
+{% endblock %}
