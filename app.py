@@ -20,6 +20,9 @@ def show_new_board():
 @app.route('/guess')
 def handle_guess():
     """handle user guess"""
+    #if not session.get('board', None):
+     #   return redirect('/')
+
     word = request.args['guess']
     board = session['board']
     result = boggle_game.check_valid_word(board, word)
